@@ -1,9 +1,17 @@
 // =====================================================
 // CONFIGURAÇÃO DO SUPABASE
-// Use SOMENTE a chave pública (publishable/anon). NUNCA a service role.
 // =====================================================
-const SUPABASE_URL = "COLE_AQUI_SUA_URL";
-const SUPABASE_ANON_KEY = "COLE_AQUI_SUA_CHAVE_PUBLICA";
+// URL do projeto Supabase
+const SUPABASE_URL = "https://ioywlpruhjuifyizulrh.supabase.co/";
+
+// Chave pública do projeto
+const SUPABASE_ANON_KEY = "sb_publishable_6z6bxY6RW6F83gTJ3JncAQ_yAfzHgGO";
+
+// Cria a conexão com o Supabase
+const supabaseClient = supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const $ = (id) => document.getElementById(id);
