@@ -1,152 +1,254 @@
-:root {
-    --fundo: #f6f4ef;
-    --texto: #1d2b2a;
-    --verde: #1f5f55;
-    --borda: #d8d3c6;
-    --erro: #a43a2a;
-    --ok: #1f5f55;
-}
-
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    background: var(--fundo);
-    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #333;
     line-height: 1.5;
 }
 
+/* =====================================================
+   CABEÇALHO
+===================================================== */
 header {
-    background: var(--verde);
-    color: #fff;
-    padding: 1.2rem 1.5rem 0;
+    background: #263238;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
 }
 
-h1 {
-    margin: 0 0 1rem;
-    font-weight: 600;
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
 }
 
-nav {
-    display: flex;
-    gap: .25rem;
-    flex-wrap: wrap;
+header p {
+    margin: 0;
+    font-size: 16px;
 }
 
-.aba {
-    background: transparent;
-    color: #cfe3de;
-    border: 0;
-    padding: .6rem 1.1rem;
-    cursor: pointer;
-    font: inherit;
-    border-radius: 6px 6px 0 0;
-}
-
-.aba.ativa {
-    background: var(--fundo);
-    color: var(--verde);
-    font-weight: 600;
-}
-
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
 main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1.5rem;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
-form {
+/* =====================================================
+   MENU
+===================================================== */
+.menu {
     display: flex;
-    gap: .5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.2rem;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.menu button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #1976d2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    background: #125ca1;
+}
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #263238;
+}
+
+section h3 {
+    margin-top: 30px;
+}
+
+/* =====================================================
+   FORMULÁRIOS
+===================================================== */
+form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo label {
+    font-weight: bold;
 }
 
 input,
 select {
-    font: inherit;
-    padding: .5rem;
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    flex: 1 1 160px;
-    background: #fff;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
 }
 
-button {
-    font: inherit;
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1976d2;
 }
 
-form button,
-.acao {
-    background: var(--verde);
-    color: #fff;
-    border: 0;
-    padding: .5rem 1rem;
-    border-radius: 4px;
+/* =====================================================
+   BOTÃO PRINCIPAL
+===================================================== */
+.btn-principal {
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background: #388e3c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-principal:hover {
+    background: #2e7031;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.card {
+    border: 1px solid #ddd;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.card h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+.status-disponivel,
+.status-devolvido {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.status-emprestado {
+    color: #c62828;
+    font-weight: bold;
+}
+
+/* =====================================================
+   BOTÕES DOS CARDS
+===================================================== */
+.btn-excluir,
+.btn-devolver {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
 }
 
-.acao.perigo {
-    background: var(--erro);
+.btn-excluir {
+    background: #c62828;
 }
 
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-    outline: 2px solid var(--verde);
-    outline-offset: 2px;
+.btn-excluir:hover {
+    background: #9e1f1f;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
+.btn-devolver {
+    background: #1976d2;
 }
 
-th,
-td {
-    text-align: left;
-    padding: .55rem .7rem;
-    border-bottom: 1px solid var(--borda);
+.btn-devolver:hover {
+    background: #125ca1;
 }
 
-.vazio {
-    color: #6b756f;
+/* =====================================================
+   MENSAGENS
+===================================================== */
+.mensagem {
+    color: #777;
+    font-style: italic;
+}
+
+.mensagem-vazia {
+    padding: 20px;
     text-align: center;
+    color: #777;
+    background: #f5f5f5;
+    border-radius: 6px;
 }
 
-.disp {
-    color: var(--ok);
-    font-weight: 600;
+/* =====================================================
+   RODAPÉ
+===================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #263238;
+    color: white;
+    margin-top: 40px;
 }
 
-.indisp {
-    color: var(--erro);
-    font-weight: 600;
+footer p {
+    margin: 0;
 }
 
-#mensagem {
-    max-width: 900px;
-    margin: .8rem auto 0;
-    padding: 0 1.5rem;
-    min-height: 1.4rem;
-}
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+    }
 
-#mensagem.erro {
-    color: var(--erro);
-}
+    header h1 {
+        font-size: 25px;
+    }
 
-#mensagem.ok {
-    color: var(--ok);
-}
+    main {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
 
-@media (max-width:600px) {
-
-    th:nth-child(3),
-    td:nth-child(3) {
-        display: none;
+    section {
+        padding: 18px;
     }
 }
