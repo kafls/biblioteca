@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Biblioteca</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Sistema de Biblioteca</h1>
+    <nav>
+      <button class="aba ativa" data-aba="livros">Livros</button>
+      <button class="aba" data-aba="usuarios">Usuários</button>
+      <button class="aba" data-aba="emprestimos">Empréstimos</button>
+    </nav>
+  </header>
+
+  <p id="mensagem" role="status"></p>
+
+  <main>
+    <section id="livros" class="painel">
+      <h2>Livros</h2>
+      <form id="form-livro">
+        <input id="livro-titulo" placeholder="Título" required>
+        <input id="livro-autor" placeholder="Autor" required>
+        <input id="livro-ano" type="number" placeholder="Ano">
+        <button type="submit">Cadastrar livro</button>
+      </form>
+      <table><thead><tr><th>Título</th><th>Autor</th><th>Ano</th><th>Situação</th><th></th></tr></thead>
+      <tbody id="lista-livros"></tbody></table>
+    </section>
+
+    <section id="usuarios" class="painel" hidden>
+      <h2>Usuários</h2>
+      <form id="form-usuario">
+        <input id="usuario-nome" placeholder="Nome" required>
+        <input id="usuario-email" type="email" placeholder="E-mail">
+        <button type="submit">Cadastrar usuário</button>
+      </form>
+      <table><thead><tr><th>Nome</th><th>E-mail</th><th></th></tr></thead>
+      <tbody id="lista-usuarios"></tbody></table>
+    </section>
+
+    <section id="emprestimos" class="painel" hidden>
+      <h2>Empréstimos</h2>
+      <form id="form-emprestimo">
+        <select id="emp-livro" required></select>
+        <select id="emp-usuario" required></select>
+        <button type="submit">Registrar empréstimo</button>
+      </form>
+      <table><thead><tr><th>Livro</th><th>Usuário</th><th>Empréstimo</th><th>Devolução</th><th></th></tr></thead>
+      <tbody id="lista-emprestimos"></tbody></table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

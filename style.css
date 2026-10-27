@@ -1,0 +1,152 @@
+:root {
+    --fundo: #f6f4ef;
+    --texto: #1d2b2a;
+    --verde: #1f5f55;
+    --borda: #d8d3c6;
+    --erro: #a43a2a;
+    --ok: #1f5f55;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+header {
+    background: var(--verde);
+    color: #fff;
+    padding: 1.2rem 1.5rem 0;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: .25rem;
+    flex-wrap: wrap;
+}
+
+.aba {
+    background: transparent;
+    color: #cfe3de;
+    border: 0;
+    padding: .6rem 1.1rem;
+    cursor: pointer;
+    font: inherit;
+    border-radius: 6px 6px 0 0;
+}
+
+.aba.ativa {
+    background: var(--fundo);
+    color: var(--verde);
+    font-weight: 600;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+form {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+}
+
+input,
+select {
+    font: inherit;
+    padding: .5rem;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    flex: 1 1 160px;
+    background: #fff;
+}
+
+button {
+    font: inherit;
+}
+
+form button,
+.acao {
+    background: var(--verde);
+    color: #fff;
+    border: 0;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.acao.perigo {
+    background: var(--erro);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: .55rem .7rem;
+    border-bottom: 1px solid var(--borda);
+}
+
+.vazio {
+    color: #6b756f;
+    text-align: center;
+}
+
+.disp {
+    color: var(--ok);
+    font-weight: 600;
+}
+
+.indisp {
+    color: var(--erro);
+    font-weight: 600;
+}
+
+#mensagem {
+    max-width: 900px;
+    margin: .8rem auto 0;
+    padding: 0 1.5rem;
+    min-height: 1.4rem;
+}
+
+#mensagem.erro {
+    color: var(--erro);
+}
+
+#mensagem.ok {
+    color: var(--ok);
+}
+
+@media (max-width:600px) {
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+    }
+}
